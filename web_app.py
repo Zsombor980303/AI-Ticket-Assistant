@@ -43,11 +43,9 @@ else:
 
 if st.button("AI Elemzés Futtatása (Háttérmotor indítása)"):
     with st.spinner("Az AI éppen dolgozik a háttérben... Kérlek várj..."):
-        # Importáljuk a tegnapi logikádat, és lefuttatjuk a teljes ticket_asszistens.py fájlt!
-        import os
-
-        os.system("python ticket_asszistens.py")
-
-        # Miután lefutott, frissítjük a weboldalt, hogy az új adatok jelenjenek meg
+        # Nem nyitunk külső parancssort, hanem közvetlenül a futó környezetben hajtjuk végre a kódot!
+        with open("ticket_asszistens.py", "r", encoding="utf-8") as f:
+            exec(f.read())
+            
         st.success("✅ Sikeres elemzés! Az adatok frissültek.")
         st.rerun()
