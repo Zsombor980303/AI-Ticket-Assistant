@@ -37,17 +37,17 @@ if os.path.exists(excel_fajl):
     st.write("---")
     st.subheader("🔄 Új elemzés indítása")
 
-    if st.button("AI Elemzés Futtatása (Háttérmotor indítása)"):
-        with st.spinner("Az AI éppen dolgozik a háttérben... Kérlek várj..."):
-            # Importáljuk a tegnapi logikádat, és lefuttatjuk a teljes ticket_asszistens.py fájlt!
-            import os
-
-            os.system("python ticket_asszistens.py")
-
-            # Miután lefutott, frissítjük a weboldalt, hogy az új adatok jelenjenek meg
-            st.success("✅ Sikeres elemzés! Az adatok frissültek.")
-            st.rerun()
-
 else:
     st.warning(
         f"⚠️ Nem találom a '{excel_fajl}' fájlt. Kérlek, először futtasd le a 'ticket_asszistens.py' fájlt a PyCharmban!")
+
+if st.button("AI Elemzés Futtatása (Háttérmotor indítása)"):
+    with st.spinner("Az AI éppen dolgozik a háttérben... Kérlek várj..."):
+        # Importáljuk a tegnapi logikádat, és lefuttatjuk a teljes ticket_asszistens.py fájlt!
+        import os
+
+        os.system("python ticket_asszistens.py")
+
+        # Miután lefutott, frissítjük a weboldalt, hogy az új adatok jelenjenek meg
+        st.success("✅ Sikeres elemzés! Az adatok frissültek.")
+        st.rerun()
