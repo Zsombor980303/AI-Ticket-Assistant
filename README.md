@@ -1,3 +1,5 @@
+App: https://ai-ticket-assistant-smdxsj9kscfkmsxcxddvwy.streamlit.app/
+
 # AI-Powered Ticket Assistant & Dashboard
 
 Egy modern, Python-alapú intelligens ügyfélszolgálati asszisztens és vezetői dashboard, amely nagy nyelvi modellt (LLM) használ a beérkező hibajegyek automatizált feldolgozására és vizualizációjára.
